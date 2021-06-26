@@ -2,7 +2,7 @@
 /*
 Copyright (c) Bryan Hughes <bryan@nebri.us>
 
-This file is part of Home Lights.
+This file is part of Poly Date.
 
 Home Lights is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
