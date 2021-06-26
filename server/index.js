@@ -12,7 +12,7 @@ fastify.get('/', function (request, reply) {
 
 // Run the server!
 console.log(`Listening on port ${PORT}`)
-fastify.listen(PORT || 3000, function (err, address) {
+fastify.listen(PORT || 3000, '0.0.0.0', function (err, address) {
   if (err) {
     fastify.log.error(err)
     process.exit(1)
