@@ -18,4 +18,4 @@ You should have received a copy of the GNU General Public License
 along with Home Lights.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-require('../dist/index.js');
+require('../dist/index.js').run();
