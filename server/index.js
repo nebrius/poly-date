@@ -1,3 +1,5 @@
+const PORT = process.env.PORT;
+
 // Require the framework and instantiate it
 const fastify = require('fastify')({
   logger: true
@@ -9,7 +11,8 @@ fastify.get('/', function (request, reply) {
 })
 
 // Run the server!
-fastify.listen(process.env.PORT || 3000, function (err, address) {
+console.log(`Listening on port ${PORT}`)
+fastify.listen(PORT || 3000, function (err, address) {
   if (err) {
     fastify.log.error(err)
     process.exit(1)
