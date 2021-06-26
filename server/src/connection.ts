@@ -21,12 +21,11 @@ import { join } from 'path';
 import Fastify from 'fastify';
 import fastifiStatic from 'fastify-static';
 import WebSocket, { Server } from 'ws';
+import { logger } from './log';
 
 export function init(): Promise<void> {
   return new Promise((resolve, reject) => {
-    const app = Fastify({
-      logger: true
-    });
+    const app = Fastify({ logger });
 
     app.register(fastifiStatic, {
       root: join(__dirname, '..', 'public')
