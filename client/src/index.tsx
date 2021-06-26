@@ -19,10 +19,11 @@ along with Home Lights.  If not, see <http://www.gnu.org/licenses/>.
 
 import React from 'react';
 import { render } from 'react-dom';
+import { connect } from './connection';
 // import { createApp } from './reduxology';
 
 async function run() {
-  // const appState = await connect();
+  await connect();
 
   // const app = createApp({
   //   container: AppContainer,

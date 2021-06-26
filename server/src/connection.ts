@@ -21,7 +21,7 @@ import { join } from 'path';
 import Fastify from 'fastify';
 import fastifiStatic from 'fastify-static';
 import WebSocket, { Server } from 'ws';
-import { logger } from './log';
+import { debug, logger } from './log';
 
 export function init(): Promise<void> {
   return new Promise((resolve, reject) => {
@@ -51,6 +51,7 @@ export function init(): Promise<void> {
     }[] = [];
     server.on('connection', (connection) => {
       connection.on('message', async (message) => {
+        debug('Client socket connected');
         processingQueue.push({ message, connection });
         if (isProcessing) {
           return;
