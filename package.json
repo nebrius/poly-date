@@ -15,5 +15,18 @@
   "bugs": {
     "url": "https://github.com/nebrius/poly-date/issues"
   },
-  "homepage": "https://github.com/nebrius/poly-date#readme"
+  "homepage": "https://github.com/nebrius/poly-date#readme",
+  "private": true,
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^3.10.0",
+    "@typescript-eslint/parser": "^3.10.0",
+    "eslint": "^7.11.0",
+    "eslint-config-prettier": "^6.13.0",
+    "eslint-loader": "^4.0.2",
+    "eslint-plugin-import": "^2.22.1",
+    "eslint-plugin-prettier": "^3.1.4",
+    "eslint-plugin-react": "^7.21.4",
+    "prettier": "^2.1.0",
+    "typescript": "^4.0.3"
+  }
 }

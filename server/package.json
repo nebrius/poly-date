@@ -4,7 +4,9 @@
   "description": "A system for managing polycule scheduling",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node index.js"
+    "build": "tsc",
+    "watch": "tsc --watch",
+    "start": "node ./bin/server.js"
   },
   "repository": {
     "type": "git",
@@ -17,6 +19,11 @@
   },
   "homepage": "https://github.com/nebrius/poly-date#readme",
   "dependencies": {
-    "fastify": "^3.18.0"
+    "fastify": "^3.18.0",
+    "fastify-static": "^4.2.2",
+    "typescript": "^4.3.4"
+  },
+  "devDependencies": {
+    "@types/node": "^15.12.4"
   }
 }
