@@ -1,7 +1,7 @@
 /*
 Copyright (c) Bryan Hughes <bryan@nebri.us>
 
-This file is part of Home Lights.
+This file is part of Poly Date.
 
 Home Lights is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
@@ -17,6 +17,7 @@ You should have received a copy of the GNU General Public License
 along with Home Lights.  If not, see <http://www.gnu.org/licenses/>.
 */
 
+import { Message } from './common/messages';
 import { delay } from './common/util';
 
 const RETRY_TIMEOUT = 250;
@@ -33,12 +34,12 @@ export function connect(): Promise<void> {
       throw new Error('Could not connect to server');
     }
     socket.addEventListener('message', (e) => {
-      const payload = JSON.parse(e.data);
-      // if (payload.type === ActionType.Hello) {
-      //   resolve(payload.data);
-      // } else {
-      //   dispatch(payload.type, payload.data);
-      // }
+      const payload: Message = JSON.parse(e.data);
+      if (payload.type === 'hello') {
+        resolve();
+      } else {
+        // dispatch(payload.type, payload.data);
+      }
     });
     socket.addEventListener('close', async () => {
       console.log('Disconnected from server, retrying...');

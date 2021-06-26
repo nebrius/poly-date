@@ -24,6 +24,7 @@ import { connect } from './connection';
 
 async function run() {
   await connect();
+  console.log('Connected to server');
 
   // const app = createApp({
   //   container: AppContainer,

@@ -59,6 +59,11 @@ export function init(): Promise<void> {
         isProcessing = true;
         processQueue();
       });
+      connection.send(
+        JSON.stringify({
+          type: 'hello'
+        })
+      );
     });
 
     async function processQueue() {
