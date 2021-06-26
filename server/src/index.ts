@@ -27,7 +27,7 @@ const fastify = Fastify({
 });
 
 fastify.register(fastifiStatic, {
-  root: join(__dirname, '..', '..', 'public')
+  root: join(__dirname, '..', 'public')
 });
 
 // Run the server!
