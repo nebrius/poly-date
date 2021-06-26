@@ -1,0 +1,20 @@
+{
+  "name": "poly-date",
+  "version": "1.0.0",
+  "description": "A system for managing polycule scheduling",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nebrius/poly-date.git"
+  },
+  "author": "Bryan Hughes <bryan@nebri.us>",
+  "license": "GPL-3.0",
+  "bugs": {
+    "url": "https://github.com/nebrius/poly-date/issues"
+  },
+  "homepage": "https://github.com/nebrius/poly-date#readme"
+}
