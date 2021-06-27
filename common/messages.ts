@@ -21,4 +21,5 @@ export type Message = HelloMessage;
 
 export interface HelloMessage {
   type: 'hello';
+  googleAuthUrl: string;
 }

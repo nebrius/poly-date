@@ -19,8 +19,10 @@ along with Home Lights.  If not, see <http://www.gnu.org/licenses/>.
 
 import { init as initConnection } from './connection';
 import { info } from './log';
+import { init as initProviders } from './provider';
 
 export async function run(): Promise<void> {
+  await initProviders();
   await initConnection();
   info('Poly Date running!');
 }

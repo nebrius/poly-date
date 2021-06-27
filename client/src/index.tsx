@@ -23,7 +23,7 @@ import { connect } from './connection';
 // import { createApp } from './reduxology';
 
 async function run() {
-  await connect();
+  const { googleAuthUrl } = await connect();
   console.log('Connected to server');
 
   // const app = createApp({
@@ -42,6 +42,12 @@ async function run() {
   //   ]
   // });
 
-  render(<div>Poly Date</div>, document.getElementById('app'));
+  render(
+    <div>
+      <h2>Poly Date</h2>
+      <a href={googleAuthUrl}>Sign in</a>
+    </div>,
+    document.getElementById('app')
+  );
 }
 run();

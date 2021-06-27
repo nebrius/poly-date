@@ -17,13 +17,13 @@ You should have received a copy of the GNU General Public License
 along with Home Lights.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-import { Message } from './common/messages';
+import { HelloMessage, Message } from './common/messages';
 import { delay } from './common/util';
 
 const RETRY_TIMEOUT = 250;
 let socket: WebSocket;
 
-export function connect(): Promise<void> {
+export function connect(): Promise<HelloMessage> {
   return new Promise((resolve) => {
     const url =
       (window.location.protocol === 'https:' ? 'wss:' : 'ws:') +
@@ -36,7 +36,7 @@ export function connect(): Promise<void> {
     socket.addEventListener('message', (e) => {
       const payload: Message = JSON.parse(e.data);
       if (payload.type === 'hello') {
-        resolve();
+        resolve(payload);
       } else {
         // dispatch(payload.type, payload.data);
       }

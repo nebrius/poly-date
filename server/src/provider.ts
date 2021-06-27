@@ -17,13 +17,8 @@ You should have received a copy of the GNU General Public License
 along with Home Lights.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-import pino from 'pino';
+import { init as initGoogle } from './providers/google';
 
-export const logger = pino({
-  level: 'debug'
-});
-
-export const debug = logger.debug.bind(logger);
-export const info = logger.info.bind(logger);
-export const warn = logger.warn.bind(logger);
-export const error = logger.error.bind(logger);
+export async function init(): Promise<void> {
+  await initGoogle();
+}

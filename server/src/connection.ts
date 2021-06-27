@@ -21,10 +21,13 @@ import { join } from 'path';
 import Fastify from 'fastify';
 import fastifiStatic from 'fastify-static';
 import WebSocket, { Server } from 'ws';
+import { HelloMessage } from './common/messages';
 import { debug, logger } from './log';
+import { getAuthUrl as getGoogleAuthUrl } from './providers/google';
 
 export function init(): Promise<void> {
   return new Promise((resolve, reject) => {
+    debug('Initializing connection');
     const app = Fastify({ logger });
 
     app.register(fastifiStatic, {
@@ -59,11 +62,11 @@ export function init(): Promise<void> {
         isProcessing = true;
         processQueue();
       });
-      connection.send(
-        JSON.stringify({
-          type: 'hello'
-        })
-      );
+      const hello: HelloMessage = {
+        type: 'hello',
+        googleAuthUrl: getGoogleAuthUrl()
+      };
+      connection.send(JSON.stringify(hello));
     });
 
     async function processQueue() {
